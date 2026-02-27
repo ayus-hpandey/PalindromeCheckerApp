@@ -3,30 +3,38 @@
  *        MAIN CLASS - UC3PalindromeCheckerApp
  * =================================================
  *
- * Use Case 3: Reverse String Palindrome Check
+ * UC4: Two-Pointer Palindrome Check
  *
  * Description:
- * This program verifies a palindrome by reversing
- * the given string and comparing it with the original.
- * It prints whether the string is a palindrome or not.
+ * This program checks whether a string is a palindrome
+ * by comparing characters from both ends using a
+ * two-pointer approach.
  *
  * @author ayushpandey
- * @version 3.0
+ * @version 4.0
  */
 public class PalindromeCheckerApp {
     public static void main(String[] args){
-                String original = "madam";
-                String reversed = "";
-                for (int i = original.length() - 1; i >= 0; i--) {
-                    reversed += original.charAt(i);
-                }
-
-                System.out.println("Original String: " + original);
-                System.out.println("Reversed String: " + reversed);
-                if (original.equals(reversed)) {
-                    System.out.println("Result: It is a Palindrome.");
-                } else {
-                    System.out.println("Result: It is NOT a Palindrome.");
+        String input = "radar";
+        char[] chars = input.toCharArray();
+        int start = 0;
+        int end = chars.length-1;
+        boolean isPalindrome = true;
+        while(start < end){
+            if(chars[start] != chars[end]){
+                isPalindrome=false;
+                break;
+            }
+            start++;
+            end--;
+        }
+        System.out.println("Input String: "+input);
+        if(isPalindrome) {
+            System.out.println("Is Palindrome? : "+isPalindrome);
+        }
+        else {
+            System.out.println("Is Palindrome?: "+isPalindrome);
+        }
                 }
             }
-        }
+
