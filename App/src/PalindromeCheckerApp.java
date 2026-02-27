@@ -1,23 +1,31 @@
 /**
+ * =====================================================
+ *            MAIN CLASS - UC2PalindromeCheckerApp
+ * =====================================================
  *
- * MAIN CLASS - UserCase1Palindrome APP
- *
- * USE CASE 1: Application Entry and Welcome Message
+ * Use Case 2: Hardcoded Palindrome Check
  *
  * Description:
- * This class represents the entry point of the
- * Palindrome Checker Management System.
- * It displays a welcome message
- * Shows application version
+ * This program performs a simple palindrome validation
+ * using a predefined string value. It compares characters
+ * from the beginning and end to verify whether the string
+ * reads the same both ways and prints the result.
  *
- * @author Ayush
- * @version 1.0
+ * @author ayushpandey
+ * @version 2.0
  */
 public class PalindromeCheckerApp {
     public static void main(String[] args){
-        System.out.println("Welcome to Palindrome Checker Management System");
-        System.out.println("Version: 1.0");
-        System.out.println("System initialized successfully");
+    String input = "madam";
+    boolean ispalindrome = true;
+    for(int i = 0; i<input.length()/2; i++){
+        if(input.charAt(i) != input.charAt(input.length()-1-i)){
+            ispalindrome=false;
+        }
+    }
+    System.out.println("Input text: "+input);
+
+    System.out.println("Is it a palidrome? : "+ispalindrome);
 
     }
 }
