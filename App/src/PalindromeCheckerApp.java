@@ -12,24 +12,23 @@ public class PalindromeCheckerApp {
      *
      * @author Ayush Pandey
      * @version 1.0
+     * UC10: Case-Insensitive & Space-Ignored Palindrome
      */
-    public static boolean isPalindrome(String str , int start , int end ) {
-        boolean isPalindrome = true;
-        if(str.charAt(start)!=str.charAt(end)) {
-            isPalindrome = false;
-        }
-        if(start>=end){
-            return true;
-        }
-        isPalindrome(str,start+1,end-1);
-        return isPalindrome;
+    public static boolean isPalindrome(String str) {
+      str=str.trim().toLowerCase();
+      for(int i=0;i<str.length()/2;i++){
+          if(str.charAt(i)!=str.charAt(str.length()-i-1)){
+              return false;
+          }
+      }
+      return true;
     }
     public static void main(String[] args) {
 
 
-        String orginalString = "Robot";
+        String orginalString = "Swastika";
 
-        System.out.println(" The given string " + orginalString + "is palindrome :"+isPalindrome(orginalString,0,orginalString.length()-1));
+        System.out.println(" The given string " + orginalString + " is palindrome :"+isPalindrome(orginalString));
 
     }
 }
