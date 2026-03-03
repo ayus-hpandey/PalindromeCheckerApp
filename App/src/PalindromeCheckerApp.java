@@ -1,5 +1,4 @@
 import java.util.*;
-
 public class PalindromeCheckerApp {
 
     /**
@@ -11,21 +10,27 @@ public class PalindromeCheckerApp {
      * @version 1.0
 
      */
+
     public static void main(String[] args) {
 
 
-        String orginalString = "motitom";
-
-        Deque<Character> deque = new ArrayDeque<>();
+        String orginalString = "mottom";
+        List<Character> list= new LinkedList<>();
+//        LinkedList list = new LinkedList();
+//
+//
+//
 for(char c : orginalString.toCharArray()) {
-    deque.add(c);
+    list.add(c);
 }
-        while(!deque.isEmpty()) {
-            if (deque.removeFirst()!=deque.removeLast()) {
+//list.printAll();
+
+        while(!list.isEmpty()) {
+            if (list.removeFirst()!=list.removeLast()) {
                 System.out.println(" The given string " + orginalString + " is not palindrome ");
                 return;
             }
-            if(deque.size()==1)
+            if(list.size()==1)
                 break;
 
         }
