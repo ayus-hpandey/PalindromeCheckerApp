@@ -1,40 +1,35 @@
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
-/**
- * =================================================
- *        MAIN CLASS - UC6PalindromeCheckerApp
- * =================================================
- *
- * UC6: Stack and Queue Based Palindrome
- *
- * Description:
- * This program checks whether a string is a palindrome
- * by using stack and queue data structure
- *
- * @author ayushpandey
- * @version 6.0
- */
 public class PalindromeCheckerApp {
-    public static void main(String[] args){
-        String input="civic";
-        Queue<Character> queue = new LinkedList<>();
-        Stack<Character> stack = new Stack();
-        for(char c: input.toCharArray()){
-            stack.push(c);
-            queue.add(c);
-        }
-        boolean isPalindrome = true;
-        while(!queue.isEmpty()){
-            if(queue.remove()!=stack.pop()){
-                isPalindrome=false;
+
+    /**
+     * Application entry point
+     * This is the first method executed by the JVM
+     *when the program starts.
+     * * @param args command-line arguments
+     * @author ayush pandey
+     * @version 1.0
+
+     */
+    public static void main(String[] args) {
+
+
+        String orginalString = "motitom";
+
+        Deque<Character> deque = new ArrayDeque<>();
+for(char c : orginalString.toCharArray()) {
+    deque.add(c);
+}
+        while(!deque.isEmpty()) {
+            if (deque.removeFirst()!=deque.removeLast()) {
+                System.out.println(" The given string " + orginalString + " is not palindrome ");
+                return;
+            }
+            if(deque.size()==1)
                 break;
-            }
+
         }
-        System.out.println("Input String :"+input);
-        System.out.println("Is Palindrome? : "+isPalindrome);
+        System.out.println(" The given string " + orginalString + " is  palindrome ");
 
-                }
-            }
-
+    }
+}
