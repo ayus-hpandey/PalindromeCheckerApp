@@ -21,7 +21,7 @@ import java.util.*;
  - Captures execution time using System.nanoTime()
  - Displays performance results
 
- @author Ayush
+ @author Ayush Pandey
  @version 13.0
  ============================================================
  */
